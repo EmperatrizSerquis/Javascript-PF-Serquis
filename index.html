@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas JS - Tercera Entrega Claudia Serquis</title>
+    <meta property="title" content="Casas JS - Tercera Entrega Claudia Serquis" />
+    <meta name="description" content="Abogados en CABA Bs As especializados en el Derecho de las personas en Accidentes, Trabajo y Daños. Las consultas son gratuitas. Cobramos solo cuando conseguimos resultados."/>
+    <meta name="keywords" content="propiedades Buenos Aires, Casas JS, departamentos en CABA"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <!-- CDN sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- CDN toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="nav navbar-brand logo">
+                    <a href="index.html"><img class="img-fluid frame-shadow" src="img/logo-casas.png" alt="Casas JS" style="height: 80px;"> </a>
+                </div>                  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#comparar">COMPARAR PROPIEDADES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#barrios">BARRIOS</a>
+                    </li>
+
+                </ul>
+                <div class="nav accion d-flex">
+                    <p><span>CONTACTANOS</span>  <br> 
+                    📳 11 5574-6175  </p>
+                </div>              
+            </div>
+            </div>
+        </nav>     
+    </header>
+
+    <main>      
+        <div class="cto">
+            <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Simulador del valor de La Casa de tus Sueños</h1>
+            <div class="circulito"></div>
+            <p>Compará el valor de tu propiedad soñada, <br> en los distintos barrios de CABA.</p>
+            <a class="boton" href="#depende">¿DE QUE DEPENDE EL VALOR DE UNA PROPIEDAD?</a>
+        </div>
+    </main>
+
+    <section class="container" id="comparar">
+        <div class="row">
+            <!-- Form Start -->
+            <div class="col-lg-6 form-background form">
+                <div class="formulario f-banner">
+                    <h2>COMPARÁ</h2>
+                    <div class="inner-form">
+                        <form  id="formulario">
+                            <div class="form">                               
+                                <label for="nombre">Nombre:</label>	
+                                <small id="errorNombre"></small>
+                                <input type="text" id="nombre" placeholder="INGRESÁ TU NOMBRE" />
+                            </div>
+                            
+                            <div class="form">                               
+                                <label for="barrio">Barrio:</label>
+                                <small id="errorBarrio"></small>	
+                                <select id="selectBarrios" >
+                                </select>
+                            </div>
+                            <div class="form">
+                                <label for="ambientes">AMBIENTES:</label>
+                                <small id="errorAmbientes"></small>	
+                                <select id="ambientes" >
+                                </select>
+                            </div>
+                            <div class="form">
+                                <label for="metros">Metros CUADRADOS:</label>
+                                <small id="errorMetros"></small>	
+                                <input type="text" name="metros" id="metros" placeholder="PODÉS INGRESAR LOS M2 QUE NECESITES" />
+                            </div>                        
+                            <div class="form text-center" >
+                                <input type="submit" value="Comparar"/>
+                            </div>
+                            
+                        </form>
+                    </div>               
+                </div>
+                <!-- Form End -->
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-5">
+                    <div class="card card-contacto frame-shadow">
+                        <div class="card-body">
+                            <div class="circulito"></div>
+                            <h2 class="mt-4"> <span id="nombreUsuario"></span> <br> Elegí tu propiedad ideal y NUNCA DEJES DE SOÑARLA!</h2>
+                            <div class="contacto-details">
+                                <table class="greenTable">
+                                    <thead>
+                                        <tr>
+                                            <th>BARRIO</th>
+                                            <th>M2</th>
+                                            <th>AMB</th>
+                                            <th>MÍNIMO</th>
+                                            <th>MÁXIMO</th>
+                                            <th>PROMEDIO</th>
+                                            <th>MÁS</th>
+                                            <th>Quitar</th>
+                                        </tr>
+                                    </thead>                                    
+                                    <tbody id="comparablesTable">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="mensaje"> <a href="#barrios"> MIRÁ EL VALOR POR BARRIO </a></div>
+                    <div class="mensaje"><button type="button" class="boton text-center" id="boton-dolar">MIRÁ EL VALOR DEL DOLAR HOY</button></div>
+                    
+                </div>               
+            </div>          
+        </div>
+    </section>
+
+    <div class="info-black marquee">
+        <marquee behavior="alternate"> COMENZÁ A COMPARAR O MIRÁ LOS VALORES POR BARRIO</marquee>         
+    </div>
+
+        <!-- SECTION DEPENDE Start -->
+        <section class="container-fluid" id="depende">
+            <div class="row">                
+                <div class="col-12 col-lg-7">
+                    <div class="inner-text">
+                        <h2>DE QUE DEPENDE EL VALOR DE UNA PROPIEDAD</h2>
+                        <div class="circulito"></div>
+                        <ul>
+                            <li data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000"><i class="fa-solid fa-location-dot i"></i> UBICACIÓN</li>
+                            <li data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"><i class="fa-solid fa-arrows-left-right-to-line i"></i> SUPERFICIE = Metros Cuadrados</li>
+                            <li data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000"><i class="fa-solid fa-home i"></i> ESTADO EDILICIO y CATEGORÍA</li>
+                            <li data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"><i class="fa-solid fa-lightbulb i"></i> LUMINOSIDAD (O. Norte: Mejor SOL)</li>
+                            <li data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"><i class="fa-solid fa-building i"></i> (En Edificios del 5to piso en adelante valen más)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 position-relative" data-aos="fade-left">
+                    <img class="img-fluid frame-shadow w-100" src="img/interior.jpg" alt="trabajando">
+                    <div class="text-image">
+                        <h3 class="text-shadow"> LA UBICACIÓN,  EL ESTADO Y LA CANTIDAD DE METROS CUADRADOS </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION DEPENDE End -->
+
+        <!-- SECTION Banner 1 Start -->
+        <section class="container-fluid banner-dark banner-dark1">
+            <h2>¿YA ENCONTRASTE LA CASA DE TUS SUEÑOS?</h2>
+            <p>Compará el valor, dependiendo de su ubicación.</p>
+            <a class="boton" href="#comparar">VOLVER A COMPARAR</a>
+        </section>
+        <!-- SECTION Banner 1 End -->
+
+    <!-- SECTION CIRCLES Start-->
+    <section class="container-fluid mt-100 mb-100" data-aos="fade-right" id="barrios">
+        <h2 >BARRIOS DE CABA VALOR PROMEDIO DEL METRO CUADRADO</h2>
+        <div class="love"></div>
+        <div class="text-center">  
+            <button class="boton" id="mayorValor"> ORDENALOS POR MAYOR VALOR </button> 
+            <button  class="boton-alt" id="menorValor"> ORDENALOS POR MENOR VALOR</button>
+        </div>
+
+        <div class="grid-container-circles" id="barriosGrid">
+        </div>
+
+    </section>
+
+    <div class="modal-contenedor">
+        <div class="modal-barrio">
+          <h3><span id="nombreBarrio"></span></h3>
+          <button id="btn-cerrar-barrio"><i class="fa-solid fa-times"></i></button>
+          <div id="barrio-contenedor">
+    
+          </div>
+          <p class="valores">Valor Metro Máximo: u$s <span id="metroMaximo"></span></p>
+          <hr>
+          <p class="valores">Valor Metro Mínimo: u$s <span id="metroMinimo"></span></p>
+          <hr>
+          <p class="valores">Valor Metro Promedio: u$s <span id="metroPromedio"></span></p>
+
+        </div>
+      </div>
+    <!-- SECTION CIRCLES End-->
+
+    <section class="container-fluid text-center mb-100">
+        <div class="mensaje"> <a class="boton-alt" href="#comparar"> COMPARAR PROPIEDADES X BARRIOS </a></div>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 menu">
+                    <div class="logo">
+                        Casas <span>JS</span>  
+                    </div>
+                    <ul>
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#depende">DE QUE DEPENDE EL PRECIO</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="practices">
+                        <h4>Barrios Más Buscados</h4>
+                        <ul>
+                            <li><a href="#barrios">Belgrano</a></li>
+                            <li><a href="#barrios">Palermo</a></li>
+                            <li><a href="#barrios">Recoleta</a></li>
+                            <li><a href="#barrios">Caballito</a></li>
+                        </ul>
+                    </div>                   
+                </div>
+                <div class="col-md-4">
+                    <div class="redes">
+                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>  
+                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div> 
+                    <p>SEGUINOS EN NUESTRAS REDES SOCIALES</p>      
+                    <div class="accion d-flex">
+                        <p>CONSULTA GRATUITA <br> 
+                        📳 11 5574-6175  </p>
+                    </div>  
+                </div>
+            </div>
+            
+        <p>All Rights Reserved 2023</p>
+        
+    </footer>
+
+
+    <a class="subir" href="#"><i class="fa-solid fa-angle-up"></i></a>
+    <div class="whatsapp">
+        <a href=" https://wa.me/5491155746175?text=Hola%20Inmobiliaria%20quisiera%20consultar%20por%20" target="_blank">
+            <img src="img/wtp.png" alt="Whatsapp Comparar Propiedades" >
+        </a>
+    </div>
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="data/barrios.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+    </body>
+</html>
